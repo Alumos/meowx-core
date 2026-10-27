@@ -48,10 +48,10 @@ cp docker-compose.example.yml docker-compose.yml
 编辑 `docker-compose.yml`，将：
 
 ```yaml
-image: ghcr.io/YOUR_GITHUB_USER/meowx-core:latest
+image: ghcr.io/alumos/meowx-core:latest
 ```
 
-改成你的实际 GHCR 镜像路径，然后把实际的 `proxies`、`proxy-groups`、`rules` 或订阅生成的配置放到 `config/config.yaml`。如果订阅链接直接返回 Clash/Mihomo 节点列表，也可以使用 `proxy-providers` 让核心自行定时拉取；示例已放在 `config/config.yaml.example`。如果链接需要妙妙屋客户端登录态或特殊加密，单独运行核心不会替代订阅服务，需要先把订阅转换成核心能识别的配置。
+当前仓库可以直接使用 `ghcr.io/alumos/meowx-core:latest`；如果你改了用户名或仓库名，再替换成你的实际 GHCR 镜像路径，然后把实际的 `proxies`、`proxy-groups`、`rules` 或订阅生成的配置放到 `config/config.yaml`。如果订阅链接直接返回 Clash/Mihomo 节点列表，也可以使用 `proxy-providers` 让核心自行定时拉取；示例已放在 `config/config.yaml.example`。如果链接需要妙妙屋客户端登录态或特殊加密，单独运行核心不会替代订阅服务，需要先把订阅转换成核心能识别的配置。
 
 配置中至少需要：
 

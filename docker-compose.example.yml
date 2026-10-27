@@ -1,7 +1,6 @@
 services:
   meowx:
-    # Replace YOUR_GITHUB_USER/meowx-core with your actual GHCR image path.
-    image: ghcr.io/YOUR_GITHUB_USER/meowx-core:latest
+    image: ghcr.io/alumos/meowx-core:latest
     container_name: meowx
     restart: unless-stopped
     ports:
