@@ -1,0 +1,27 @@
+services:
+  meowx:
+    # Replace YOUR_GITHUB_USER/meowx-core with your actual GHCR image path.
+    image: ghcr.io/YOUR_GITHUB_USER/meowx-core:latest
+    container_name: meowx
+    restart: unless-stopped
+    ports:
+      - "7890:7890" # mixed HTTP/SOCKS5 proxy
+      - "9090:9090" # external controller API
+    volumes:
+      - ./config:/root/.config/mihomo
+    networks:
+      - proxy-net
+
+  metacubexd:
+    image: ghcr.milu.moe/metacubex/metacubexd:latest
+    container_name: metacubexd
+    restart: unless-stopped
+    ports:
+      - "18091:80"
+    networks:
+      - proxy-net
+
+networks:
+  proxy-net:
+    name: meowx-proxy
+    driver: bridge

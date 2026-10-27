@@ -1,0 +1,43 @@
+# Copy to config/config.yaml and add your subscription-generated
+# proxies / proxy-groups / rules below.
+
+mixed-port: 7890
+allow-lan: true
+bind-address: "*"
+mode: rule
+log-level: info
+
+external-controller: 0.0.0.0:9090
+secret: "CHANGE-ME-to-a-long-random-secret"
+
+# Enable this only if the dashboard reports a CORS error.
+# external-controller-cors:
+#   allow-origins:
+#     - "http://*"
+#     - "https://*"
+#   allow-private-network: true
+
+# proxies:
+# proxy-groups:
+# rules:
+
+# 如果妙妙屋订阅返回的是 Clash/Mihomo 节点列表，可以让核心定时拉取：
+# proxy-providers:
+#   meowx:
+#     type: http
+#     url: "https://example.invalid/your-subscription"
+#     path: ./providers/meowx.yaml
+#     interval: 3600
+#     health-check:
+#       enable: true
+#       url: https://www.gstatic.com/generate_204
+#       interval: 300
+#
+# proxy-groups:
+#   - name: PROXY
+#     type: select
+#     use:
+#       - meowx
+#
+# rules:
+#   - MATCH,PROXY

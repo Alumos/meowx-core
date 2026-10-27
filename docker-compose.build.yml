@@ -1,0 +1,10 @@
+# Local-only build override. The NAS should use docker-compose.example.yml
+# and pull the image from GHCR instead of building from source.
+services:
+  meowx:
+    build:
+      context: .
+      args:
+        MEOWC_COMMIT: 1928f639aaa43dfe7fcedc85b6e06e406d86a22c
+        MEOWX_VERSION: 0.3.9
+    image: meowx-core:local
