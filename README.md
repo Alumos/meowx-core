@@ -82,10 +82,9 @@ MetaCubeXD 地址：`http://NAS_IP:18091`。在面板里填：
 
 GitHub 仓库可以设置为 Private，GitHub Actions 仍然可以拉取公开的 meowC 源码，并把生成的镜像推送到 GHCR。
 
-仓库中的 `.github/workflows/build-and-push.yml` 会构建并推送：
+仓库中的 `.github/workflows/build-and-push.yml` 会构建并推送当前 NAS 使用的 AMD64 镜像：
 
-- `linux/amd64`
-- `linux/arm64`
+- `linux/amd64`（当前 NAS 目标架构）
 
 推送到默认分支后，镜像标签为：
 
